@@ -43,7 +43,7 @@ const loginUser = async (body) => {
     }
     // Compare user passwords
     const { password: dbPassword, firstname, lastname, id } = user[0];
-    console.log(user[0])
+    
     const userPassword = bcrypt.compareSync(password, dbPassword); // Boolean true/false
     if (!userPassword) {
         throw {
